@@ -19,6 +19,13 @@ public class Movement : MonoBehaviour
 
     Rigidbody rigidbody = null;
 
+
+    [HideInInspector]
+    public bool grabbing = false;
+
+    [HideInInspector]
+    public GameObject grabbed = null;
+
     Animator anim;
     public enum States
     {
@@ -77,6 +84,31 @@ public class Movement : MonoBehaviour
         }
 
         anim.SetInteger("State", (int)movement_state);
+
         rigidbody.velocity = movement * movementVelocity;
+
+        Grab();
+    }
+
+    void Grab()
+    {
+        if (state.Buttons.RightShoulder == ButtonState.Pressed)
+        {
+            grabbing = true;
+        }
+        else
+        {
+            if (grabbed != null)
+            {
+                grabbed.gameObject.GetComponent<BeGrabbed>().isGrabbed = false;
+                grabbed = null;
+            }
+            grabbing = false;
+        }
+
+        if (grabbed != null)
+        {
+            grabbed.transform.position = cameraTransform.forward * 2 + cameraTransform.position;
+        }
     }
 }
