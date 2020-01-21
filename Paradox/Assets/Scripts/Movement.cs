@@ -38,9 +38,14 @@ public class Movement : MonoBehaviour
 
         Vector3 rotation = new Vector3(-state.ThumbSticks.Right.Y, state.ThumbSticks.Right.X, 0f);
 
-        if (rotation != Vector3.zero)
+        if (rotation.y != 0)
         {
-            cameraTransform.localRotation = Quaternion.Euler(cameraTransform.localRotation.eulerAngles.x + rotation.x * rotationVelocity * Time.deltaTime, cameraTransform.localRotation.eulerAngles.y + rotation.y * rotationVelocity * Time.deltaTime, cameraTransform.localRotation.eulerAngles.z);
+            transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles.x, transform.localRotation.eulerAngles.y + rotation.y * rotationVelocity * Time.deltaTime, transform.localRotation.eulerAngles.z);
+        }
+
+        if (rotation.x != 0)
+        {
+            cameraTransform.localRotation = Quaternion.Euler(cameraTransform.localRotation.eulerAngles.x + rotation.x * rotationVelocity * Time.deltaTime, cameraTransform.localRotation.eulerAngles.y, cameraTransform.localRotation.eulerAngles.z);
         }
     }
 }
