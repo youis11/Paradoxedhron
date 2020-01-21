@@ -25,8 +25,6 @@ public class BeGrabbed : MonoBehaviour
             Movement movement = other.gameObject.GetComponentInParent<Movement>();
             movement.grabbed = gameObject;
             isGrabbed = true;
-
-            transform.position = 
         }
     }
 }

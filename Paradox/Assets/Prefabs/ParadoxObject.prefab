@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 2316382856052115696}
   - component: {fileID: 2316382856052115710}
   - component: {fileID: 2316382856052115697}
+  - component: {fileID: 400542824}
   m_Layer: 0
   m_Name: ParadoxObject
   m_TagString: Untagged
@@ -139,6 +140,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &400542824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2316382856052115699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4035f953ee846247baf55f624570a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrabbed: 0
 --- !u!1 &2316382856467782960
 GameObject:
   m_ObjectHideFlags: 0
