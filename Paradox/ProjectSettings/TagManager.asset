@@ -6,6 +6,7 @@ TagManager:
   tags:
   - player_1
   - player_2
+  - lever
   layers:
   - Default
   - TransparentFX
