@@ -4,20 +4,35 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
-    void OnCollision(Collision collision)
+    public GameObject crank;
+
+    private void OnTriggerStay(Collider other)
     {
+        if (other.CompareTag("player_1") || other.CompareTag("player_2"))
+        {
+            //Debug.Log(ReturnDirection(other.gameObject, this.gameObject));
 
-        Debug.Log(ReturnDirection(collision.gameObject, this.gameObject));
+            //if (ReturnDirection(other.gameObject, gameObject) == HitDirection.Right)
+            //{
+            Debug.Log("right");
+            transform.Rotate(new Vector3(0f, 0f, 500f * Time.fixedDeltaTime));
+            //}
 
-        //if (ReturnDirection(collision.gameObject, this.gameObject) == HitDirection.Right)
-        //{
-        //    transform.Rotate(Vector3.forward * 2 * Time.deltaTime);
-        //}
+            //if (ReturnDirection(other.gameObject, gameObject) == HitDirection.Left)
+            //{
+            //    Debug.Log("left");
+            //    transform.Rotate(new Vector3(0f, 0f, -500f * Time.fixedDeltaTime));
+            //}
 
-        //if (ReturnDirection(collision.gameObject, this.gameObject) == HitDirection.Left)
-        //{
-        //    transform.Rotate(-Vector3.forward * 2 * Time.deltaTime);
-        //}
+            if (other.transform.position.x > crank.transform.position.x)
+            {
+                transform.Rotate(new Vector3(0f, 0f, 500f * Time.fixedDeltaTime));
+            }
+            if (other.transform.position.x < crank.transform.position.x)
+            {
+                transform.Rotate(new Vector3(0f, 0f, -500f * Time.fixedDeltaTime));
+            }
+        }
     }
 
     private enum HitDirection { None, Top, Bottom, Forward, Back, Left, Right }
@@ -27,7 +42,8 @@ public class Lever : MonoBehaviour
         RaycastHit MyRayHit;
         Vector3 direction = (lever.transform.position - Object.transform.position).normalized;
         Ray MyRay = new Ray(Object.transform.position, direction);
-
+        Debug.Log("shout");
+        Debug.DrawRay(Object.transform.position, direction, Color.green);
         if (Physics.Raycast(MyRay, out MyRayHit))
         {
 
