@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
     Rigidbody rigidbody = null;
 
     bool jumping = false;
-
+    private bool canJump = false;
     [HideInInspector]
     public bool grabbing = false;
 
@@ -92,8 +92,9 @@ public class Movement : MonoBehaviour
         rigidbody.velocity = movement;
         anim.SetInteger("State", (int)movement_state);
 
-        if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed)
+        if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed && canJump)
         {
+            canJump = false;
             rigidbody.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
         }
 
@@ -101,6 +102,7 @@ public class Movement : MonoBehaviour
         //RESET WHEN IT TOUCHES THE GROUND  
         if (Physics.OverlapSphere(new Vector3(transform.position.x,transform.position.y - 0.1f,transform.position.z), 0.5f).Length == 1)
         {
+            canJump = false;
             if (transform.position.y > maxY)
             {
                 maxY = transform.position.y;
@@ -113,6 +115,7 @@ public class Movement : MonoBehaviour
         else
         {
             maxY = transform.position.y;
+            canJump = true;
         }
 
         Grab();
