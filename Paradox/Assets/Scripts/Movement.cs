@@ -114,11 +114,10 @@ public class Movement : MonoBehaviour
         if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed && canJump)
         {
             canJump = false;
+            Debug.Log("JUMPPP");
             rigidbody.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
         }
 
-        //IF IS NOT TOUCHING THE GROUND
-        //RESET WHEN IT TOUCHES THE GROUND  
         if (Physics.OverlapSphere(new Vector3(transform.position.x,transform.position.y - 0.1f,transform.position.z), 0.5f).Length == 1)
         {
             canJump = false;
@@ -158,7 +157,7 @@ public class Movement : MonoBehaviour
 
         if (grabbed != null)
         {
-            grabbed.transform.position = cameraTransform.forward * 2 + cameraTransform.position;
+            grabbed.transform.position = cameraTransform.forward * 2 + cameraTransform.position - cameraTransform.up * 1.2f;
             grabbed.transform.forward = transform.forward;
         }
     }
