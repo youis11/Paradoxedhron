@@ -1378,8 +1378,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crank: {fileID: 346402287}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  player1: {fileID: 320081531}
+  player2: {fileID: 764804058}
 --- !u!65 &2099620376
 BoxCollider:
   m_ObjectHideFlags: 0
