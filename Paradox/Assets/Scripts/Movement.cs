@@ -19,10 +19,21 @@ public class Movement : MonoBehaviour
 
     Rigidbody rigidbody = null;
 
+    Animator anim;
+    public enum States
+    {
+        IDLE=0,
+        RUNNING,
+        JUMPING,
+    }
+
+    public States movement_state = States.IDLE;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -54,6 +65,18 @@ public class Movement : MonoBehaviour
         Vector3 movement = Vector3.zero;
         movement += transform.right * state.ThumbSticks.Left.X;
         movement += transform.forward * state.ThumbSticks.Left.Y;
-        rigidbody.velocity = movement * movementVelocity;   
+
+        if (movement.Equals(Vector3.zero))
+        {
+            movement_state = States.IDLE;
+
+        }
+        else
+        {
+            movement_state = States.RUNNING;
+        }
+
+        anim.SetInteger("State", (int)movement_state);
+        rigidbody.velocity = movement * movementVelocity;
     }
 }
