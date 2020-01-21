@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ParadaxPolyhedron : MonoBehaviour
 {
-    string player1Tag = "player1";
-    string player2Tag = "player2";
+    string player1Tag = "player_1";
+    string player2Tag = "player_2";
     BoxCollider boxCollider;
     SphereCollider sphereCollider;
 
