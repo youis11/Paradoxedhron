@@ -555,7 +555,7 @@ PrefabInstance:
     - target: {fileID: 3259548134617968062, guid: b9db3964645e1694fae9fb7cfc6109cd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.46
+      value: 5.9
       objectReference: {fileID: 0}
     - target: {fileID: 3259548134617968062, guid: b9db3964645e1694fae9fb7cfc6109cd,
         type: 3}
@@ -607,5 +607,25 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: a3379cfa290ecba418330495fdce5f3d, type: 2}
+    - target: {fileID: 1755549078813688327, guid: b9db3964645e1694fae9fb7cfc6109cd,
+        type: 3}
+      propertyPath: m_Mass
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755549078813688327, guid: b9db3964645e1694fae9fb7cfc6109cd,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315079151288161049, guid: b9db3964645e1694fae9fb7cfc6109cd,
+        type: 3}
+      propertyPath: jumpForce
+      value: 1200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315079151288161049, guid: b9db3964645e1694fae9fb7cfc6109cd,
+        type: 3}
+      propertyPath: downJumpForce
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9db3964645e1694fae9fb7cfc6109cd, type: 3}
