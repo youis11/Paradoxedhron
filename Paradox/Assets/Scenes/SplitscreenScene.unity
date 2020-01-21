@@ -226,6 +226,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player02
       objectReference: {fileID: 0}
+    - target: {fileID: 6058184169392562970, guid: 2f8a76e2f5ddd0e47bd75ba4352d0904,
+        type: 3}
+      propertyPath: m_TagString
+      value: player_2
+      objectReference: {fileID: 0}
     - target: {fileID: 6058184169392562967, guid: 2f8a76e2f5ddd0e47bd75ba4352d0904,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -444,6 +449,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c787edbea1fcf8242a76bb1e2cb61f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1118436758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6058184169392562970, guid: 2f8a76e2f5ddd0e47bd75ba4352d0904,
+    type: 3}
+  m_PrefabInstance: {fileID: 6058184170492927628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1118436765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118436758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73124ab744a2c2f47a117888431e1baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPolyhedron: 1
+--- !u!1 &1155184966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6058184169392562970, guid: 2f8a76e2f5ddd0e47bd75ba4352d0904,
+    type: 3}
+  m_PrefabInstance: {fileID: 428234264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1155184973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155184966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73124ab744a2c2f47a117888431e1baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPolyhedron: 0
 --- !u!1 &1407000520
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +853,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058184169392562970, guid: 2f8a76e2f5ddd0e47bd75ba4352d0904,
+        type: 3}
+      propertyPath: m_TagString
+      value: player_1
       objectReference: {fileID: 0}
     - target: {fileID: 6058184169392562967, guid: 2f8a76e2f5ddd0e47bd75ba4352d0904,
         type: 3}
