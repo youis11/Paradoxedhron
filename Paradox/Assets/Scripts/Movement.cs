@@ -19,6 +19,12 @@ public class Movement : MonoBehaviour
 
     Rigidbody rigidbody = null;
 
+    [HideInInspector]
+    public bool grabbing = false;
+
+    [HideInInspector]
+    public GameObject grabbed = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +60,30 @@ public class Movement : MonoBehaviour
         Vector3 movement = Vector3.zero;
         movement += transform.right * state.ThumbSticks.Left.X;
         movement += transform.forward * state.ThumbSticks.Left.Y;
-        rigidbody.velocity = movement * movementVelocity;   
+        rigidbody.velocity = movement * movementVelocity;
+
+        Grab();
+    }
+
+    void Grab()
+    {
+        if (state.Buttons.RightShoulder == ButtonState.Pressed)
+        {
+            grabbing = true;
+        }
+        else
+        {
+            if (grabbed != null)
+            {
+                grabbed.gameObject.GetComponent<BeGrabbed>().isGrabbed = false;
+                grabbed = null;
+            }
+            grabbing = false;
+        }
+
+        if (grabbed != null)
+        {
+            grabbed.transform.position = cameraTransform.forward * 2 + cameraTransform.position;
+        }
     }
 }
