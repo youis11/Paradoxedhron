@@ -6,7 +6,6 @@ TagManager:
   tags:
   - player_1
   - player_2
-  - lever
   - GrabTag
   layers:
   - Default
