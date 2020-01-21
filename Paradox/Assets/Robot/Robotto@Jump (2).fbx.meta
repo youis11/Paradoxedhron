@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 068e69fa1e5e75f4dbaaa0d2008b29da
+guid: dce9595aa65bbb348856e68921794527
 ModelImporter:
   serializedVersion: 28
   internalIDToNameTable:
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Jump
+      name: Jump (2)
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 52
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
