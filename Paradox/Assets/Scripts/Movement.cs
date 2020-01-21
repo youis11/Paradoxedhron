@@ -25,17 +25,6 @@ public class Movement : MonoBehaviour
     {
         state = GamePad.GetState(playerIndex);
 
-        Vector3 movement = new Vector3(state.ThumbSticks.Left.X, 0f, state.ThumbSticks.Left.Y);
-
-        if (movement != Vector3.zero)
-        {
-            rigidbody.velocity = movement * movementVelocity * Time.deltaTime;
-        }
-        else
-        {
-            rigidbody.velocity = Vector3.zero;
-        }
-
         Vector3 rotation = new Vector3(-state.ThumbSticks.Right.Y, state.ThumbSticks.Right.X, 0f);
 
         if (rotation.y != 0)
@@ -47,5 +36,10 @@ public class Movement : MonoBehaviour
         {
             cameraTransform.localRotation = Quaternion.Euler(cameraTransform.localRotation.eulerAngles.x + rotation.x * rotationVelocity * Time.deltaTime, cameraTransform.localRotation.eulerAngles.y, cameraTransform.localRotation.eulerAngles.z);
         }
+
+        Vector3 movement = Vector3.zero;
+        movement += transform.right * state.ThumbSticks.Left.X;
+        movement += transform.forward * state.ThumbSticks.Left.Y;
+        rigidbody.velocity = movement * movementVelocity;   
     }
 }
