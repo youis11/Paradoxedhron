@@ -83,15 +83,28 @@ public class Movement : MonoBehaviour
         movement *= movementVelocity;
         movement.y = rigidbody.velocity.y;
 
-        if (movement.x == 0 && movement.z == 0)
+        if (movement.x == 0 && movement.z == 0 && canJump)
         {
             movement_state = States.IDLE;
         }
+        else if(!canJump)
+        {
+            movement_state = States.JUMPING;
+        }
         else
         {
-                movement_state = States.RUNNING;
-           
+            movement_state = States.RUNNING;
         }
+
+        if(movement_state == States.JUMPING)
+        {
+            anim.speed = 1;
+        }
+        else
+        {
+            anim.speed = 1;
+        }
+
         rigidbody.velocity = movement;
         anim.SetInteger("State", (int)movement_state);
         anim.SetFloat("vel_x", state.ThumbSticks.Left.X);
