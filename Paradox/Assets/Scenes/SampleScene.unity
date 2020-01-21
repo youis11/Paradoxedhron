@@ -659,8 +659,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementVelocity: 8
   rotationVelocity: 160
-  camXBlockMax: 26
-  camXBlockMin: -6
+  camXBlockMax: 49
+  camXBlockMin: -20
   playerIndex: 0
   cameraTransform: {fileID: 963194228}
 --- !u!65 &1118436760
