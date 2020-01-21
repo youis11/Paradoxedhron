@@ -7,6 +7,11 @@ public class Movement : MonoBehaviour
     public float movementVelocity = 0;
     public float rotationVelocity = 0;
 
+    public int camXBlockMax = 0;
+    public int camXBlockMin = 0;
+
+    private float playerRotationX = 0f;
+
     public PlayerIndex playerIndex;
     GamePadState state;
 
@@ -34,7 +39,16 @@ public class Movement : MonoBehaviour
 
         if (rotation.x != 0)
         {
-            cameraTransform.localRotation = Quaternion.Euler(cameraTransform.localRotation.eulerAngles.x + rotation.x * rotationVelocity * Time.deltaTime, cameraTransform.localRotation.eulerAngles.y, cameraTransform.localRotation.eulerAngles.z);
+            playerRotationX += rotation.x * rotationVelocity * Time.deltaTime;
+            if (playerRotationX > camXBlockMax)
+            {
+                playerRotationX = camXBlockMax;
+            }
+            if (playerRotationX < camXBlockMin)
+            {
+                playerRotationX = camXBlockMin;
+            }
+            cameraTransform.localRotation = Quaternion.Euler(playerRotationX, cameraTransform.localRotation.eulerAngles.y, cameraTransform.localRotation.eulerAngles.z);
         }
 
         Vector3 movement = Vector3.zero;
