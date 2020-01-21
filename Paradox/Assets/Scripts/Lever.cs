@@ -11,16 +11,8 @@ public class Lever : MonoBehaviour
     private float maxRotation = 50f;
     private float minRotation = -50f;
 
-    PlayerPolyhedron[] players;
-
-    private void Start()
-    {
-        players = FindObjectsOfType<PlayerPolyhedron>();
-        for (int i = 0; i < players.Length; ++i)
-        {
-
-        }
-    }
+    public PlayerPolyhedron player1;
+    public PlayerPolyhedron player2;
 
     private void OnTriggerStay(Collider other)
     {
@@ -34,7 +26,8 @@ public class Lever : MonoBehaviour
                     if (currRotation > maxRotation)
                     {
                         currRotation = maxRotation;
-                        //TODO: Call function
+                        ChangeDimensions(Shape.box);
+                        //TODO: Play sfx
                     }
                 }
             }
@@ -46,7 +39,8 @@ public class Lever : MonoBehaviour
                     if (currRotation < minRotation)
                     {
                         currRotation = minRotation;
-                        //TODO: Call function
+                        ChangeDimensions(Shape.sphere);
+                        //TODO: Play sfx
                     }
                 }
             }
@@ -58,7 +52,13 @@ public class Lever : MonoBehaviour
     {
         if (player1Shape == Shape.box)
         {
-
+            player1.PlayerShape = Shape.box;
+            player2.PlayerShape = Shape.sphere;
+        }
+        else if (player1Shape == Shape.sphere)
+        {
+            player1.GetComponent<PlayerPolyhedron>().PlayerShape = Shape.sphere;
+            player2.GetComponent<PlayerPolyhedron>().PlayerShape = Shape.box;
         }
     }
 
