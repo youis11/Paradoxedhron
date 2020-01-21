@@ -94,7 +94,6 @@ public class Movement : MonoBehaviour
         }
         rigidbody.velocity = movement;
         anim.SetInteger("State", (int)movement_state);
-        rigidbody.velocity = movement * movementVelocity;
         anim.SetFloat("vel_x", state.ThumbSticks.Left.X);
         anim.SetFloat("vel_y", state.ThumbSticks.Left.Y);
         
