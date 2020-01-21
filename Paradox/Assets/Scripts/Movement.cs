@@ -96,15 +96,6 @@ public class Movement : MonoBehaviour
             movement_state = States.RUNNING;
         }
 
-        if(movement_state == States.JUMPING)
-        {
-            anim.speed = 1;
-        }
-        else
-        {
-            anim.speed = 1;
-        }
-
         rigidbody.velocity = movement;
         anim.SetInteger("State", (int)movement_state);
         anim.SetFloat("vel_x", state.ThumbSticks.Left.X);
