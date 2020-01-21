@@ -37,6 +37,8 @@ public class Movement : MonoBehaviour
         IDLE=0,
         RUNNING,
         JUMPING,
+        GRAB_IDLE,
+        GRAB_RUN,
     }
 
     public States movement_state = States.IDLE;
@@ -87,10 +89,15 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            movement_state = States.RUNNING;
+                movement_state = States.RUNNING;
+           
         }
         rigidbody.velocity = movement;
         anim.SetInteger("State", (int)movement_state);
+        rigidbody.velocity = movement * movementVelocity;
+        anim.SetFloat("vel_x", state.ThumbSticks.Left.X);
+        anim.SetFloat("vel_y", state.ThumbSticks.Left.Y);
+        
 
         if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed && canJump)
         {
