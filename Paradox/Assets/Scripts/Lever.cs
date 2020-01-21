@@ -5,33 +5,35 @@ using UnityEngine;
 public class Lever : MonoBehaviour
 {
     public GameObject crank;
+    private float currRotation = 0f;
+    private float rotateVelocity = 50f;
+
+    private float maxRotation = 50f;
+    private float minRotation = -50f;
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("player_1") || other.CompareTag("player_2"))
+        if (other.CompareTag("player_1") || other.CompareTag("player_2") || other.CompareTag("GrabTag"))
         {
-            //Debug.Log(ReturnDirection(other.gameObject, this.gameObject));
-
-            //if (ReturnDirection(other.gameObject, gameObject) == HitDirection.Right)
-            //{
-            Debug.Log("right");
-            transform.Rotate(new Vector3(0f, 0f, 500f * Time.fixedDeltaTime));
-            //}
-
-            //if (ReturnDirection(other.gameObject, gameObject) == HitDirection.Left)
-            //{
-            //    Debug.Log("left");
-            //    transform.Rotate(new Vector3(0f, 0f, -500f * Time.fixedDeltaTime));
-            //}
-
             if (other.transform.position.x > crank.transform.position.x)
             {
-                transform.Rotate(new Vector3(0f, 0f, 500f * Time.fixedDeltaTime));
+                currRotation += rotateVelocity * Time.fixedDeltaTime;
+                if (currRotation > maxRotation)
+                {
+                    currRotation = maxRotation;
+                    //TODO: Call function
+                }
             }
             if (other.transform.position.x < crank.transform.position.x)
             {
-                transform.Rotate(new Vector3(0f, 0f, -500f * Time.fixedDeltaTime));
+                currRotation -= rotateVelocity * Time.fixedDeltaTime;
+                if (currRotation < minRotation)
+                {
+                    currRotation = minRotation;
+                    //TODO: Call function
+                }
             }
+            transform.rotation = Quaternion.Euler(0f, 0f, currRotation);
         }
     }
 
