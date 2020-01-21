@@ -36,7 +36,7 @@ public class ParadaxPolyhedron : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag(player2Tag))
         {
-            ChangeCollider(collision.gameObject.GetComponent<PlayerPolyhedron>().playerPolyhedron)
+            ChangeCollider(collision.gameObject.GetComponent<PlayerPolyhedron>().playerPolyhedron);
         }
     }
 
