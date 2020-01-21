@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &122136647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 122136648}
+  - component: {fileID: 122136649}
+  m_Layer: 0
+  m_Name: GrabCollider
+  m_TagString: GrabTag
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &122136648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122136647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3259548134617968062}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &122136649
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122136647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.034144696, y: 0.13040675, z: 0.060833037}
+  m_Center: {x: 0.00013425386, y: 0.067294054, z: 0.04954052}
 --- !u!1 &1330292360565096597
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,24 +127,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330292360565096597}
   m_Enabled: 1
---- !u!114 &2315079151288161049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974657028142276525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 590c6339a48a16b4db5075cacf65bc66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementVelocity: 0
-  rotationVelocity: 0
-  camXBlockMax: 0
-  camXBlockMin: 0
-  playerIndex: 0
-  cameraTransform: {fileID: 2945811970879854399}
 --- !u!54 &1755549078813688327
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -115,8 +141,42 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &2315079151288161049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974657028142276525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590c6339a48a16b4db5075cacf65bc66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVelocity: 8
+  rotationVelocity: 160
+  camXBlockMax: 39
+  camXBlockMin: -26
+  playerIndex: 0
+  cameraTransform: {fileID: 2945811970879854399}
+  grabbing: 0
+  grabbed: {fileID: 0}
+  movement_state: 0
+--- !u!65 &2073195385
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974657028142276525}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04440601, y: 0.11313125, z: 0.04505018}
+  m_Center: {x: -0.0021114782, y: 0.056476995, z: 0.012424001}
 --- !u!1001 &4602266242342881805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -137,7 +197,7 @@ PrefabInstance:
     - target: {fileID: 1360849054605404083, guid: 40eadeef4b9e2314e82222674ee65e50,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7263
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 1360849054605404083, guid: 40eadeef4b9e2314e82222674ee65e50,
         type: 3}
@@ -183,11 +243,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6311796869396142509, guid: 40eadeef4b9e2314e82222674ee65e50,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40eadeef4b9e2314e82222674ee65e50, type: 3}
