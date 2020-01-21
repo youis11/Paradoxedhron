@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class BeGrabbed : MonoBehaviour
 {
+    [HideInInspector]
+    public bool isGrabbed = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!isGrabbed && other.gameObject.CompareTag("GrabTag"))
+        {
+            Movement movement = other.gameObject.GetComponentInParent<Movement>();
+            movement.grabbed = gameObject;
+            isGrabbed = true;
+        }
     }
 }
