@@ -126,10 +126,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementVelocity: 8
   rotationVelocity: 160
-  camXBlockMax: 49
+  jumpForce: 1200
+  downJumpForce: 1000
+  camXBlockMax: 39
   camXBlockMin: -20
   playerIndex: 0
   cameraTransform: {fileID: 6058184171183485944}
+  grabbing: 0
+  grabbed: {fileID: 0}
+  movement_state: 0
 --- !u!1 &6058184171183485949
 GameObject:
   m_ObjectHideFlags: 0

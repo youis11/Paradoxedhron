@@ -5,7 +5,7 @@ using UnityEngine;
 public class Lever : MonoBehaviour
 {
     public GameObject crank;
-    private float currRotation = 0f;
+    private float currRotation = -50f;
     private float rotateVelocity = 50f;
 
     private float maxRotation = 50f;
