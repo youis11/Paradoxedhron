@@ -32,6 +32,8 @@ public class Movement : MonoBehaviour
         IDLE=0,
         RUNNING,
         JUMPING,
+        GRAB_IDLE,
+        GRAB_RUN,
     }
 
     public States movement_state = States.IDLE;
@@ -73,19 +75,23 @@ public class Movement : MonoBehaviour
         movement += transform.right * state.ThumbSticks.Left.X;
         movement += transform.forward * state.ThumbSticks.Left.Y;
 
+
         if (movement.Equals(Vector3.zero))
         {
-            movement_state = States.IDLE;
-
+                movement_state = States.IDLE;
+           
         }
         else
         {
-            movement_state = States.RUNNING;
+                movement_state = States.RUNNING;
+           
         }
 
         anim.SetInteger("State", (int)movement_state);
-
         rigidbody.velocity = movement * movementVelocity;
+        anim.SetFloat("vel_x", state.ThumbSticks.Left.X);
+        anim.SetFloat("vel_y", state.ThumbSticks.Left.Y);
+        
 
         Grab();
     }
