@@ -10,5 +10,29 @@ public enum Shape
 
 public class PlayerPolyhedron : MonoBehaviour
 {
-    public Shape playerPolyhedron;
+    private Shape playerPolyhedron;
+    private Camera playerCamera;
+
+    private void Start()
+    {
+        playerCamera = GetComponentInChildren<Camera>();
+    }
+
+    public Shape PlayerPolyhedron
+    {
+        set
+        {
+            playerPolyhedron = value;
+            if (playerPolyhedron == Shape.box)
+            {
+
+            }
+            else if (playerPolyhedron == Shape.sphere)
+            {
+
+            }
+        }
+    }
+
 }
+
