@@ -32,11 +32,11 @@ public class ParadaxPolyhedron : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(player1Tag))
         {
-            ChangeCollider(collision.gameObject.GetComponent<PlayerPolyhedron>().playerPolyhedron);
+            ChangeCollider(collision.gameObject.GetComponent<PlayerPolyhedron>().PlayerShape);
         }
         else if (collision.gameObject.CompareTag(player2Tag))
         {
-            ChangeCollider(collision.gameObject.GetComponent<PlayerPolyhedron>().playerPolyhedron);
+            ChangeCollider(collision.gameObject.GetComponent<PlayerPolyhedron>().PlayerShape);
         }
     }
 
