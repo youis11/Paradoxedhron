@@ -11,12 +11,14 @@ public class BeGrabbed : MonoBehaviour
     {
         if (!isGrabbed && other.gameObject.CompareTag("GrabTag"))
         {
+            Debug.Log("entered collision");
             if (other.gameObject.GetComponentInParent<Movement>().grabbing)
             {
+                Debug.Log("grabbing collision");
                 Movement movement = other.gameObject.GetComponentInParent<Movement>();
                 movement.grabbed = gameObject;
                 isGrabbed = true;
-                GetComponent<ParadaxPolyhedron>().ChangeCollider(other.GetComponent<PlayerPolyhedron>().PlayerShape); 
+                GetComponent<ParadaxPolyhedron>().ChangeCollider(other.GetComponentInParent<PlayerPolyhedron>().PlayerShape); 
             }
         }
     }
