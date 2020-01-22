@@ -32,6 +32,7 @@ public class Movement : MonoBehaviour
     private float maxY = 0f;
 
     Animator anim;
+    public LayerMask ignorePlayerMask;
     public enum States
     {
         IDLE=0,
@@ -108,7 +109,9 @@ public class Movement : MonoBehaviour
             rigidbody.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
         }
 
-        if (Physics.OverlapSphere(new Vector3(transform.position.x,transform.position.y - 0.1f,transform.position.z), 0.5f).Length == 1)
+        Collider[] touchedColliders = Physics.OverlapSphere(new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z), 0.5f, ignorePlayerMask);
+        Debug.Log("touched colliders length " + touchedColliders.Length);
+        if (touchedColliders.Length == 0)
         {
             canJump = false;
             if (transform.position.y > maxY)
@@ -122,8 +125,13 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            maxY = transform.position.y;
-            canJump = true;
+            bool isParadoxObj = touchedColliders[0].CompareTag("ParadoxObject");
+            if (!isParadoxObj
+                || (isParadoxObj && touchedColliders[0].GetComponent<BoxCollider>().enabled == true))
+            {
+                maxY = transform.position.y;
+                canJump = true;
+            }
         }
 
         Grab();

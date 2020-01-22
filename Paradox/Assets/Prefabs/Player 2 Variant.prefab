@@ -77,6 +77,11 @@ PrefabInstance:
       propertyPath: playerIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4735363697569162466, guid: ff9d09c61d5701d409d6efa3652d5272,
+        type: 3}
+      propertyPath: ignorePlayerMask.m_Bits
+      value: 823
+      objectReference: {fileID: 0}
     - target: {fileID: 76286818711409577, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -92,5 +97,6 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 311
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1915174752743385096, guid: ff9d09c61d5701d409d6efa3652d5272, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ff9d09c61d5701d409d6efa3652d5272, type: 3}
