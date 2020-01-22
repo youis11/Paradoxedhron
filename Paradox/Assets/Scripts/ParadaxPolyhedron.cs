@@ -18,13 +18,13 @@ public class ParadaxPolyhedron : MonoBehaviour
 
         if (startInverted)
         {
-            boxCollider.enabled = true;
-            sphereCollider.enabled = false;
+            boxCollider.enabled = false;
+            sphereCollider.enabled = true;
         }
         else
         {
-            boxCollider.enabled = false;
-            sphereCollider.enabled = true;
+            boxCollider.enabled = true;
+            sphereCollider.enabled = false;
         }
     }
 
@@ -45,7 +45,7 @@ public class ParadaxPolyhedron : MonoBehaviour
         GetComponentInParent<Rigidbody>().mass = 1;
     }
 
-    private void ChangeCollider(Shape shape)
+    public void ChangeCollider(Shape shape)
     {
         if (shape == Shape.box)
         {
