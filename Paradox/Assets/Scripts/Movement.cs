@@ -44,6 +44,7 @@ public class Movement : MonoBehaviour
 
     public States movement_state = States.IDLE;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -152,6 +153,10 @@ public class Movement : MonoBehaviour
                     grabbed.gameObject.GetComponent<BeGrabbed>().Release();
                 }
                 grabbed.gameObject.GetComponent<BeGrabbed>().isGrabbed = false;
+                grabbed.transform.SetParent(null); 
+                grabbed.AddComponent<Rigidbody>();
+                Rigidbody rigid = grabbed.GetComponent<Rigidbody>();
+                rigid.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
                 grabbed = null;
             }
             grabbing = false;
@@ -159,8 +164,7 @@ public class Movement : MonoBehaviour
 
         if (grabbed != null)
         {
-            grabbed.transform.position = cameraTransform.forward * 2 + cameraTransform.position - cameraTransform.up * 1.2f;
-            grabbed.transform.forward = transform.forward;
+            //grabbed.transform.position = cameraTransform.position - cameraTransform.up * 1.2f;
         }
     }
 

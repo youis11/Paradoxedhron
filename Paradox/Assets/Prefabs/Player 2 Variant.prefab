@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 5524660874761116229, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.520836
+      value: -14.129162
       objectReference: {fileID: 0}
     - target: {fileID: 5524660874761116229, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 5524660874761116229, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -54.762596
+      value: -50.892597
       objectReference: {fileID: 0}
     - target: {fileID: 5524660874761116229, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
@@ -72,25 +72,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1995747360433399623, guid: ff9d09c61d5701d409d6efa3652d5272,
-        type: 3}
-      propertyPath: boxMask.m_Bits
-      value: 3383
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995747360433399623, guid: ff9d09c61d5701d409d6efa3652d5272,
-        type: 3}
-      propertyPath: sphereMask.m_Bits
-      value: 3639
-      objectReference: {fileID: 0}
     - target: {fileID: 4735363697569162466, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
       propertyPath: playerIndex
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4735363697569162466, guid: ff9d09c61d5701d409d6efa3652d5272,
-        type: 3}
-      propertyPath: ignorePlayerMask.m_Bits
-      value: 823
       objectReference: {fileID: 0}
     - target: {fileID: 76286818711409577, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
@@ -102,6 +87,15 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 311
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1915174752743385096, guid: ff9d09c61d5701d409d6efa3652d5272, type: 3}
+    - target: {fileID: 1995747360433399623, guid: ff9d09c61d5701d409d6efa3652d5272,
+        type: 3}
+      propertyPath: boxMask.m_Bits
+      value: 7479
+      objectReference: {fileID: 0}
+    - target: {fileID: 1995747360433399623, guid: ff9d09c61d5701d409d6efa3652d5272,
+        type: 3}
+      propertyPath: sphereMask.m_Bits
+      value: 7735
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff9d09c61d5701d409d6efa3652d5272, type: 3}
