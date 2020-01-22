@@ -57,8 +57,8 @@ public class Lever : MonoBehaviour
         }
         else if (player1Shape == Shape.sphere)
         {
-            player1.GetComponent<PlayerPolyhedron>().PlayerShape = Shape.sphere;
-            player2.GetComponent<PlayerPolyhedron>().PlayerShape = Shape.box;
+            player1.PlayerShape = Shape.sphere;
+            player2.PlayerShape = Shape.box;
         }
     }
 
