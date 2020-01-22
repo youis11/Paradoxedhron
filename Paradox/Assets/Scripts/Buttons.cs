@@ -7,47 +7,100 @@ public class Buttons : MonoBehaviour
 {
     public GameObject camera;
     public GameObject main_menu;
+    public GameObject credits;
     public GameObject options_menu;
-
+    public GameObject cube;
+    float anglesAdded = 0;
+    float range = 0;
+    bool movingOptions = false;
+    bool movingOptionsToMainMenu = false;
+    bool movingCreditsToMainMenu = false;
+    bool movingCredits = false;
     public void GoToOptions()
     {
-        StartCoroutine(camera_to_options());
-        main_menu.SetActive(false);
+        range = 0;
+        movingOptions = true;
         options_menu.SetActive(true);
+        anglesAdded = 0;
     }
 
-    IEnumerator camera_to_options()
+    public void ReturnOptionsToMainMenu()
     {
-        float initial_posX = camera.transform.position.x;
-        float initial_rotY = camera.transform.rotation.eulerAngles.y;
-        for (; ; )
+        range = 0;
+        movingOptionsToMainMenu = true;
+        main_menu.SetActive(true);
+        anglesAdded = 0;
+    }
+
+    public void ReturnmainMenuToCredits()
+    {
+        range = 0;
+        movingCredits = true;
+        credits.SetActive(true);
+        anglesAdded = 0;
+    }
+
+    public void GoMainMenu()
+    {
+        range = 0;
+        movingCreditsToMainMenu = true;
+        main_menu.SetActive(true);
+        anglesAdded = 0;
+    }
+    private void Update()
+    {
+        if (movingOptions)
         {
-            float percentage = (camera.transform.position.x - initial_posX) / (140 - initial_posX);
-            float percentageRot = (camera.transform.rotation.eulerAngles.y - initial_rotY) / (-45 - initial_rotY);
-            camera.transform.position = new Vector3(Mathf.Lerp(initial_posX, 140, percentage), camera.transform.position.y, camera.transform.position.z);
-            camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(initial_rotY, -45, percentageRot), 0);
-            if (camera.transform.position.x == 300 && camera.transform.rotation.eulerAngles.y == -45) 
+            range += 2 * Time.deltaTime;
+            anglesAdded = Mathf.Lerp(0, 90, range);
+            cube.transform.localRotation = Quaternion.Euler(cube.transform.localRotation.eulerAngles.x, anglesAdded, cube.transform.localRotation.eulerAngles.z);
+            if (anglesAdded >= 90)
             {
-                StartCoroutine(camera_to_options2());
-                break;
+                anglesAdded = 90;
+                movingOptions = false;
+                main_menu.SetActive(false);
             }
-            yield return new WaitForFixedUpdate();
+        }
+
+        if (movingOptionsToMainMenu)
+        {
+            range += 2 * Time.deltaTime;
+            anglesAdded = Mathf.Lerp(90, 0, range);
+            cube.transform.localRotation = Quaternion.Euler(cube.transform.localRotation.eulerAngles.x, anglesAdded, cube.transform.localRotation.eulerAngles.z);
+            if (anglesAdded <= 0)
+            {
+                anglesAdded = 0;
+                movingOptionsToMainMenu = false;
+                options_menu.SetActive(false);
+            }
+        }
+
+        if (movingCreditsToMainMenu)
+        {
+            range += 2 * Time.deltaTime;
+            anglesAdded = Mathf.Lerp(-90, 0, range);
+            cube.transform.localRotation = Quaternion.Euler(cube.transform.localRotation.eulerAngles.x, anglesAdded, cube.transform.localRotation.eulerAngles.z);
+            if (anglesAdded >= 0)
+            {
+                anglesAdded = 0;
+                movingCreditsToMainMenu = false;
+                credits.SetActive(false);
+            }
+        }
+
+        if (movingCredits)
+        {
+            range += 2 * Time.deltaTime;
+            anglesAdded = Mathf.Lerp(0, -90, range);
+            cube.transform.localRotation = Quaternion.Euler(cube.transform.localRotation.eulerAngles.x, anglesAdded, cube.transform.localRotation.eulerAngles.z);
+            if (anglesAdded <= -90)
+            {
+                anglesAdded = -90;
+                movingCredits = false;
+                main_menu.SetActive(false);
+            }
         }
     }
 
-    IEnumerator camera_to_options2()
-    {
-        float initial_pos_z = camera.transform.position.z;
-        for (; ; )
-        {
-            float percentage = (0 - camera.transform.position.z) / initial_pos_z;
-            camera.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y, Mathf.Lerp(camera.transform.position.z, 0, percentage));
-            camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.eulerAngles.y, -90, 1), 0);
-            if (camera.transform.position.z == 0 && camera.transform.rotation.eulerAngles.y == -90)
-            {
-                break;
-            }
-            yield return 0;
-        }
-    }
+
 }
