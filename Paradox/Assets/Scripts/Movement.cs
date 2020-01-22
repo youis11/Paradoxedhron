@@ -164,7 +164,7 @@ public class Movement : MonoBehaviour
 
         if (grabbed != null)
         {
-            //grabbed.transform.position = cameraTransform.position - cameraTransform.up * 1.2f;
+            grabbed.transform.forward = transform.forward;
         }
     }
 
