@@ -19,11 +19,11 @@ TagManager:
   - 
   - boxLayer
   - sphereLayer
-  - playerLayer
+  - removeObjectsFromThisLayer
   - tubeEnd
   - wall
-  - 
-  - 
+  - player1Layer
+  - player2Layer
   - 
   - 
   - 
