@@ -1099,7 +1099,7 @@ PrefabInstance:
     - target: {fileID: 976345001674272278, guid: 9a63b493599fabe44b0918d47c8be4fb,
         type: 3}
       propertyPath: nextScene
-      value: Level1
+      value: Winning
       objectReference: {fileID: 0}
     - target: {fileID: 1422229546835003404, guid: 9a63b493599fabe44b0918d47c8be4fb,
         type: 3}
@@ -1119,7 +1119,7 @@ PrefabInstance:
     - target: {fileID: 1832137163361110779, guid: 9a63b493599fabe44b0918d47c8be4fb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.86
+      value: -2.45
       objectReference: {fileID: 0}
     - target: {fileID: 1832137163361110779, guid: 9a63b493599fabe44b0918d47c8be4fb,
         type: 3}
