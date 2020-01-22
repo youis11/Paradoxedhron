@@ -147,6 +147,10 @@ public class Movement : MonoBehaviour
         {
             if (grabbed != null)
             {
+                if (GetComponent<PlayerPolyhedron>().PlayerShape == Shape.sphere)
+                {
+                    grabbed.gameObject.GetComponent<BeGrabbed>().Release();
+                }
                 grabbed.gameObject.GetComponent<BeGrabbed>().isGrabbed = false;
                 grabbed = null;
             }
