@@ -79,7 +79,10 @@ MonoBehaviour:
   isGrabbed: 0
   tubeEndMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!54 &1738600205
 Rigidbody:
   m_ObjectHideFlags: 0

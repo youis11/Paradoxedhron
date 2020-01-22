@@ -14,6 +14,13 @@ public class Lever : MonoBehaviour
     public PlayerPolyhedron player1;
     public PlayerPolyhedron player2;
 
+    AudioSource sfx;
+
+    void Start()
+    {
+        sfx = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("player_1") || other.CompareTag("player_2") || other.CompareTag("GrabTag"))
@@ -27,7 +34,7 @@ public class Lever : MonoBehaviour
                     {
                         currRotation = maxRotation;
                         ChangeDimensions(Shape.box);
-                        //TODO: Play sfx
+                        sfx.Play();
                     }
                 }
             }
@@ -40,7 +47,7 @@ public class Lever : MonoBehaviour
                     {
                         currRotation = minRotation;
                         ChangeDimensions(Shape.sphere);
-                        //TODO: Play sfx
+                        sfx.Play();
                     }
                 }
             }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 654889580845003059}
   - component: {fileID: 8085087591562714563}
   - component: {fileID: 7910974601515677421}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7726133929792009944}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6729472987940947147}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 23.937574, y: -1.2585917, z: -41.192104}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
