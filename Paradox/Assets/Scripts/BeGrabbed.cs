@@ -6,17 +6,6 @@ public class BeGrabbed : MonoBehaviour
 {
     [HideInInspector]
     public bool isGrabbed = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -27,6 +16,7 @@ public class BeGrabbed : MonoBehaviour
                 Movement movement = other.gameObject.GetComponentInParent<Movement>();
                 movement.grabbed = gameObject;
                 isGrabbed = true;
+                GetComponent<ParadaxPolyhedron>().ChangeCollider(other.GetComponent<PlayerPolyhedron>().PlayerShape); 
             }
         }
     }

@@ -18,6 +18,7 @@ public class PlayerPolyhedron : MonoBehaviour
     private void Start()
     {
         playerCamera = GetComponentInChildren<Camera>();
+        PlayerShape = playerShape;
     }
 
     public Shape PlayerShape
