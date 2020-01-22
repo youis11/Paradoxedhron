@@ -40,10 +40,16 @@ public class ParadaxPolyhedron : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        GetComponentInParent<Rigidbody>().mass = 1;
+    }
+
     private void ChangeCollider(Shape shape)
     {
         if (shape == Shape.box)
         {
+            GetComponentInParent<Rigidbody>().mass = 999999999;
             if (!boxCollider.enabled)
             {
                 //Play sfx change shape
@@ -53,6 +59,7 @@ public class ParadaxPolyhedron : MonoBehaviour
         }
         else if (shape == Shape.sphere)
         {
+            GetComponentInParent<Rigidbody>().mass = 1;
             if (!sphereCollider.enabled)
             {
                 //Play sfx change round

@@ -102,10 +102,9 @@ public class Movement : MonoBehaviour
         anim.SetFloat("vel_y", state.ThumbSticks.Left.Y);
         
 
-        if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed && canJump)
+        if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed && canJump && GetComponent<PlayerPolyhedron>().PlayerShape == Shape.box)
         {
             canJump = false;
-            Debug.Log("JUMPPP");
             rigidbody.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
         }
 
