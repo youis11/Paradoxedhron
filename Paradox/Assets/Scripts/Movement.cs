@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using XInputDotNetPure;
+using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     public float movementVelocity = 0;
@@ -136,6 +137,11 @@ public class Movement : MonoBehaviour
         }
 
         Grab();
+
+        if (prevState.Buttons.Y == ButtonState.Pressed && state.Buttons.Y == ButtonState.Pressed)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name.ToString());
+        }
     }
 
     void Grab()
