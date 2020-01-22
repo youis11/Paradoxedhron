@@ -7,6 +7,7 @@ TagManager:
   - player_1
   - player_2
   - GrabTag
+  - ParadoxObject
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - boxLayer
   - sphereLayer
-  - 
+  - playerLayer
   - 
   - 
   - 
@@ -43,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Image
+    uniqueID: 2256531031
+    locked: 0
+  - name: Buttons
+    uniqueID: 472192369
     locked: 0

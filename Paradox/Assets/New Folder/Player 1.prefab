@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementVelocity: 8
   rotationVelocity: 160
-  jumpForce: 1200
+  jumpForce: 900
   downJumpForce: 1000
   camXBlockMax: 39
   camXBlockMin: -26
@@ -178,6 +178,9 @@ MonoBehaviour:
   cameraTransform: {fileID: 2945811970879854399}
   grabbing: 0
   grabbed: {fileID: 0}
+  ignorePlayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   movement_state: 0
 --- !u!1001 &4602266242342881805
 PrefabInstance:
@@ -186,16 +189,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2646406675547329952, guid: 40eadeef4b9e2314e82222674ee65e50,
-        type: 3}
-      propertyPath: m_Name
-      value: Player 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2646406675547329952, guid: 40eadeef4b9e2314e82222674ee65e50,
-        type: 3}
-      propertyPath: m_TagString
-      value: player_1
-      objectReference: {fileID: 0}
     - target: {fileID: 1360849054605404083, guid: 40eadeef4b9e2314e82222674ee65e50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -250,6 +243,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646406675547329952, guid: 40eadeef4b9e2314e82222674ee65e50,
+        type: 3}
+      propertyPath: m_Name
+      value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646406675547329952, guid: 40eadeef4b9e2314e82222674ee65e50,
+        type: 3}
+      propertyPath: m_TagString
+      value: player_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40eadeef4b9e2314e82222674ee65e50, type: 3}

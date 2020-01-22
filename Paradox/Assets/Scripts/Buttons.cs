@@ -24,6 +24,38 @@ public class Buttons : MonoBehaviour
         anglesAdded = 0;
     }
 
+    public void OpenWebsite(int number)
+    {
+        switch (number)
+        {
+            case 0:
+                {
+                    Application.OpenURL("https://github.com/youis11");
+                    break;
+                }
+            case 1:
+                {
+                    Application.OpenURL("https://github.com/OriolCs2");
+                    break;
+                }
+            case 2:
+                {
+                    Application.OpenURL("https://github.com/VictorSegura99");
+                    break;
+                }
+            case 3:
+                {
+                    Application.OpenURL("https://github.com/JaumeMontagut");
+                    break;
+                }
+            case 4:
+                {
+                    Application.OpenURL("https://github.com/optus23");
+                    break;
+                }
+        }
+    }
+
     public void ReturnOptionsToMainMenu()
     {
         range = 0;
