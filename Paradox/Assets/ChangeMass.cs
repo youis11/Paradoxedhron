@@ -16,11 +16,11 @@ public class ChangeMass : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnCollisionEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("GrabTag"))
+        if (collision.gameObject.CompareTag("player_1") || collision.gameObject.CompareTag("player_2")) 
         {
-            PlayerPolyhedron poly = collision.gameObject.GetComponentInParent<PlayerPolyhedron>();
+            PlayerPolyhedron poly = collision.gameObject.GetComponent<PlayerPolyhedron>();
             if (poly.PlayerShape == Shape.box)
             {
                 GetComponent<Rigidbody>().mass = 999999999999999999;
