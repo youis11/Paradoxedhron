@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 5524660874761116229, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.129162
+      value: 28.520836
       objectReference: {fileID: 0}
     - target: {fileID: 5524660874761116229, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 5524660874761116229, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -50.892597
+      value: -54.762596
       objectReference: {fileID: 0}
     - target: {fileID: 5524660874761116229, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
@@ -85,17 +85,22 @@ PrefabInstance:
     - target: {fileID: 76286818711409577, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 311
+      value: 6455
+      objectReference: {fileID: 0}
+    - target: {fileID: 1995747360433399623, guid: ff9d09c61d5701d409d6efa3652d5272,
+        type: 3}
+      propertyPath: playerShape
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1995747360433399623, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
       propertyPath: boxMask.m_Bits
-      value: 7479
+      value: 3383
       objectReference: {fileID: 0}
     - target: {fileID: 1995747360433399623, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
       propertyPath: sphereMask.m_Bits
-      value: 7735
+      value: 3639
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff9d09c61d5701d409d6efa3652d5272, type: 3}
