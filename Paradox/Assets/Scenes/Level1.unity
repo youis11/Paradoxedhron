@@ -601,6 +601,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4804068811320650633, guid: d90f9cbfbc8c9264f8e0c472b37d73dd,
+        type: 3}
+      propertyPath: boxMask.m_Bits
+      value: 311
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804068811320650633, guid: d90f9cbfbc8c9264f8e0c472b37d73dd,
+        type: 3}
+      propertyPath: sphereMask.m_Bits
+      value: 567
+      objectReference: {fileID: 0}
     - target: {fileID: 2587874976081568920, guid: d90f9cbfbc8c9264f8e0c472b37d73dd,
         type: 3}
       propertyPath: m_Name
@@ -665,16 +675,6 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpForce
       value: 800
-      objectReference: {fileID: 0}
-    - target: {fileID: 4804068811320650633, guid: d90f9cbfbc8c9264f8e0c472b37d73dd,
-        type: 3}
-      propertyPath: boxMask.m_Bits
-      value: 311
-      objectReference: {fileID: 0}
-    - target: {fileID: 4804068811320650633, guid: d90f9cbfbc8c9264f8e0c472b37d73dd,
-        type: 3}
-      propertyPath: sphereMask.m_Bits
-      value: 567
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d90f9cbfbc8c9264f8e0c472b37d73dd, type: 3}
@@ -1835,3 +1835,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37cccd5c0b3935e488ead0e416816797, type: 3}
+--- !u!1001 &4382605696772150215
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4382605697261299613, guid: 9c2f69a4407b9344b90160dd0fbf0431,
+        type: 3}
+      propertyPath: m_Name
+      value: Victory
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382605697261299609, guid: 9c2f69a4407b9344b90160dd0fbf0431,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382605697261299609, guid: 9c2f69a4407b9344b90160dd0fbf0431,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382605697261299609, guid: 9c2f69a4407b9344b90160dd0fbf0431,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382605697261299609, guid: 9c2f69a4407b9344b90160dd0fbf0431,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382605697261299609, guid: 9c2f69a4407b9344b90160dd0fbf0431,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382605697261299609, guid: 9c2f69a4407b9344b90160dd0fbf0431,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382605697261299609, guid: 9c2f69a4407b9344b90160dd0fbf0431,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382605697261299609, guid: 9c2f69a4407b9344b90160dd0fbf0431,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382605697261299609, guid: 9c2f69a4407b9344b90160dd0fbf0431,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382605697261299609, guid: 9c2f69a4407b9344b90160dd0fbf0431,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382605697261299609, guid: 9c2f69a4407b9344b90160dd0fbf0431,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9c2f69a4407b9344b90160dd0fbf0431, type: 3}
