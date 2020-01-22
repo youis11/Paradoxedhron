@@ -15,7 +15,7 @@ public class BeGrabbed : MonoBehaviour
         {
             Debug.Log("entered collision");
             Movement player = other.gameObject.GetComponentInParent<Movement>();
-            if (player.grabbing)
+            if (player.grabbing && player.grabbed == null)
             {
                 Vector3 origin = player.cameraTransform.position;
                 Vector3 dir = player.cameraTransform.forward;
