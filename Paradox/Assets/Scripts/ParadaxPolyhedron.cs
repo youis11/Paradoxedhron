@@ -20,11 +20,13 @@ public class ParadaxPolyhedron : MonoBehaviour
         {
             boxCollider.enabled = false;
             sphereCollider.enabled = true;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
         else
         {
             boxCollider.enabled = true;
             sphereCollider.enabled = false;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         }
     }
 

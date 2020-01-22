@@ -156,7 +156,10 @@ public class Movement : MonoBehaviour
                 grabbed.transform.SetParent(null); 
                 grabbed.AddComponent<Rigidbody>();
                 Rigidbody rigid = grabbed.GetComponent<Rigidbody>();
-                rigid.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+                if (GetComponent<BoxCollider>().enabled)
+                {
+                    rigid.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+                }
                 grabbed = null;
             }
             grabbing = false;
