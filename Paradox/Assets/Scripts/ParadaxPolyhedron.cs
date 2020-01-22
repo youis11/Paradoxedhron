@@ -18,13 +18,13 @@ public class ParadaxPolyhedron : MonoBehaviour
 
         if (startInverted)
         {
-            boxCollider.enabled = true;
-            sphereCollider.enabled = false;
+            boxCollider.enabled = false;
+            sphereCollider.enabled = true;
         }
         else
         {
-            boxCollider.enabled = false;
-            sphereCollider.enabled = true;
+            boxCollider.enabled = true;
+            sphereCollider.enabled = false;
         }
     }
 
