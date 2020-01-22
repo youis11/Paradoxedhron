@@ -105,7 +105,6 @@ public class Movement : MonoBehaviour
         if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed && canJump)
         {
             canJump = false;
-            Debug.Log("JUMPPP");
             rigidbody.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
         }
 
