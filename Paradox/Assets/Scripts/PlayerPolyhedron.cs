@@ -10,7 +10,7 @@ public enum Shape
 
 public class PlayerPolyhedron : MonoBehaviour
 {
-    private Shape playerShape;
+    public Shape playerShape;
     private Camera playerCamera;
     public LayerMask boxMask;
     public LayerMask sphereMask;
@@ -18,6 +18,7 @@ public class PlayerPolyhedron : MonoBehaviour
     private void Start()
     {
         playerCamera = GetComponentInChildren<Camera>();
+        PlayerShape = playerShape;
     }
 
     public Shape PlayerShape
