@@ -7,6 +7,7 @@ public class BeGrabbed : MonoBehaviour
     [HideInInspector]
     public bool isGrabbed = false;
     public LayerMask tubeEndMask;
+    public LayerMask wallMask;
 
     private void OnTriggerStay(Collider other)
     {
@@ -16,10 +17,18 @@ public class BeGrabbed : MonoBehaviour
             Movement player = other.gameObject.GetComponentInParent<Movement>();
             if (player.grabbing)
             {
-                Debug.Log("grabbing collision");
-                player.grabbed = gameObject;
-                isGrabbed = true;
-                GetComponent<ParadaxPolyhedron>().ChangeCollider(other.GetComponentInParent<PlayerPolyhedron>().PlayerShape); 
+                Vector3 origin = player.cameraTransform.position;
+                Vector3 dir = player.cameraTransform.forward;
+                float maxDistance = Vector3.Distance(transform.position, player.cameraTransform.position);
+                if (!Physics.Raycast(origin, dir, maxDistance, wallMask))
+                {
+                    Debug.Log("grabbing collision");
+                    player.grabbed = gameObject;
+                    isGrabbed = true;
+                    Destroy(GetComponent<Rigidbody>());
+                    transform.SetParent(player.transform.Find("Camera"));
+                    GetComponent<ParadaxPolyhedron>().ChangeCollider(other.GetComponentInParent<PlayerPolyhedron>().PlayerShape);
+                }
             }
         }
     }
