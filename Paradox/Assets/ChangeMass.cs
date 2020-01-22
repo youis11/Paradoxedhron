@@ -16,7 +16,7 @@ public class ChangeMass : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("player_1") || collision.gameObject.CompareTag("player_2")) 
         {
@@ -24,6 +24,7 @@ public class ChangeMass : MonoBehaviour
             if (poly.PlayerShape == Shape.box)
             {
                 GetComponent<Rigidbody>().mass = 999999999999999999;
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
             }
             else
             {

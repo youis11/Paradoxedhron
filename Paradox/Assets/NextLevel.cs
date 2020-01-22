@@ -8,18 +8,8 @@ public class NextLevel : MonoBehaviour
     bool player2 = false;
     public string nextScene;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("player_1"))
         {
@@ -36,7 +26,7 @@ public class NextLevel : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.CompareTag("player_1"))
         {
