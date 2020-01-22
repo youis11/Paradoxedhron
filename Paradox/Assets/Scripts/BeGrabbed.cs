@@ -22,9 +22,12 @@ public class BeGrabbed : MonoBehaviour
     {
         if (!isGrabbed && other.gameObject.CompareTag("GrabTag"))
         {
-            Movement movement = other.gameObject.GetComponentInParent<Movement>();
-            movement.grabbed = gameObject;
-            isGrabbed = true;
+            if (other.gameObject.GetComponentInParent<Movement>().grabbing)
+            {
+                Movement movement = other.gameObject.GetComponentInParent<Movement>();
+                movement.grabbed = gameObject;
+                isGrabbed = true;
+            }
         }
     }
 }
