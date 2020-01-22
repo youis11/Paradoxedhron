@@ -26,7 +26,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73124ab744a2c2f47a117888431e1baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShape: 0
+  playerShape: 1
   boxMask:
     serializedVersion: 2
     m_Bits: 7479
@@ -58,7 +58,7 @@ PrefabInstance:
     - target: {fileID: 3259548134617968062, guid: b9db3964645e1694fae9fb7cfc6109cd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -40.58
+      value: 19.74692
       objectReference: {fileID: 0}
     - target: {fileID: 3259548134617968062, guid: b9db3964645e1694fae9fb7cfc6109cd,
         type: 3}
@@ -68,7 +68,7 @@ PrefabInstance:
     - target: {fileID: 3259548134617968062, guid: b9db3964645e1694fae9fb7cfc6109cd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.67
+      value: -56.996307
       objectReference: {fileID: 0}
     - target: {fileID: 3259548134617968062, guid: b9db3964645e1694fae9fb7cfc6109cd,
         type: 3}
@@ -118,7 +118,7 @@ PrefabInstance:
     - target: {fileID: 6960509471336752210, guid: b9db3964645e1694fae9fb7cfc6109cd,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 567
+      value: 6711
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9db3964645e1694fae9fb7cfc6109cd, type: 3}
