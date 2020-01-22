@@ -45,7 +45,7 @@ public class ParadaxPolyhedron : MonoBehaviour
         GetComponentInParent<Rigidbody>().mass = 1;
     }
 
-    private void ChangeCollider(Shape shape)
+    public void ChangeCollider(Shape shape)
     {
         if (shape == Shape.box)
         {
