@@ -885,7 +885,8 @@ PrefabInstance:
       propertyPath: downJumpForce
       value: 1200
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4867612526517576902, guid: d90f9cbfbc8c9264f8e0c472b37d73dd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d90f9cbfbc8c9264f8e0c472b37d73dd, type: 3}
 --- !u!1 &760042182 stripped
 GameObject:
