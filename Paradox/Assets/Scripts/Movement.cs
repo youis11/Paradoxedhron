@@ -111,7 +111,7 @@ public class Movement : MonoBehaviour
         }
 
         Collider[] touchedColliders = Physics.OverlapSphere(new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z), 0.5f, ignorePlayerMask);
-        Debug.Log("touched colliders length " + touchedColliders.Length);
+        //Debug.Log("touched colliders length " + touchedColliders.Length);
         if (touchedColliders.Length == 0)
         {
             canJump = false;

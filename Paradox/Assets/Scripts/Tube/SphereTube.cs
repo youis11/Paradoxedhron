@@ -12,8 +12,6 @@ public class SphereTube : MonoBehaviour
     public IEnumerator Move(Transform sphere)
     {
         sphere.GetComponent<SphereCollider>().enabled = false;
-        sphere.GetComponent<Rigidbody>().useGravity = false;
-        sphere.GetComponent<Rigidbody>().velocity = Vector3.zero;
         bool reversed = false;
         //1- See in which end we are
         if (Vector3.Distance(points[0].position, sphere.position)
