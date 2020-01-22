@@ -54,11 +54,6 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 800
       objectReference: {fileID: 0}
-    - target: {fileID: 2315079151288161049, guid: b9db3964645e1694fae9fb7cfc6109cd,
-        type: 3}
-      propertyPath: ignorePlayerMask.m_Bits
-      value: 823
-      objectReference: {fileID: 0}
     - target: {fileID: 3259548134617968062, guid: b9db3964645e1694fae9fb7cfc6109cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -114,9 +109,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 122136647, guid: b9db3964645e1694fae9fb7cfc6109cd, type: 3}
-      propertyPath: m_Layer
-      value: 10
+    - target: {fileID: 2073195385, guid: b9db3964645e1694fae9fb7cfc6109cd, type: 3}
+      propertyPath: m_Size.z
+      value: 0.046105087
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073195385, guid: b9db3964645e1694fae9fb7cfc6109cd, type: 3}
+      propertyPath: m_Center.x
+      value: -0.0021114799
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073195385, guid: b9db3964645e1694fae9fb7cfc6109cd, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0054320307
       objectReference: {fileID: 0}
     - target: {fileID: 6960509471336752210, guid: b9db3964645e1694fae9fb7cfc6109cd,
         type: 3}
@@ -128,8 +131,7 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 567
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8864110199322091507, guid: b9db3964645e1694fae9fb7cfc6109cd, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9db3964645e1694fae9fb7cfc6109cd, type: 3}
 --- !u!1 &8858809249731733590 stripped
 GameObject:
