@@ -19,7 +19,7 @@ public class NextLevel : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("player_1"))
         {
@@ -36,7 +36,7 @@ public class NextLevel : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("player_1"))
         {
