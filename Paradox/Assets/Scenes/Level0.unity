@@ -195,12 +195,12 @@ PrefabInstance:
     - target: {fileID: 4735363697569162466, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
       propertyPath: jumpForce
-      value: 1300
+      value: 1100
       objectReference: {fileID: 0}
     - target: {fileID: 4735363697569162466, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
       propertyPath: downJumpForce
-      value: 1200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4735363697569162466, guid: ff9d09c61d5701d409d6efa3652d5272,
         type: 3}
@@ -1066,12 +1066,12 @@ PrefabInstance:
     - target: {fileID: 1778445448003020844, guid: d90f9cbfbc8c9264f8e0c472b37d73dd,
         type: 3}
       propertyPath: jumpForce
-      value: 1300
+      value: 1100
       objectReference: {fileID: 0}
     - target: {fileID: 1778445448003020844, guid: d90f9cbfbc8c9264f8e0c472b37d73dd,
         type: 3}
       propertyPath: downJumpForce
-      value: 1200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1778445448003020844, guid: d90f9cbfbc8c9264f8e0c472b37d73dd,
         type: 3}
