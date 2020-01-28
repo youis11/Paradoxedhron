@@ -122,7 +122,7 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                rigidbody.AddForce(Vector3.down * downJumpForce);
+                //rigidbody.AddForce(Vector3.down * downJumpForce);
             }
         }
         else
