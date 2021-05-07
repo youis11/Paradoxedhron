@@ -177,6 +177,11 @@ public class Movement : MonoBehaviour
         }
     }
 
+    public void SavePlayer ()
+    {
+        SaveSystem.SavePlayer();
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
