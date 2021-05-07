@@ -19,16 +19,16 @@ public class floating_dead : MonoBehaviour
     void Update()
     {
         offset = -movement * Time.deltaTime * direction;
-        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + offset, transform.localPosition.z);
+        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
         if (transform.localPosition.y <= min)
         {
-            print("AAAAAAAAAAAAAAAAAA");
+            //print("AAAAAAAAAAAAAAAAAA");
             direction = -1;
         }
 
         if (transform.localPosition.y >= max) 
         {
-            print("BBBBBBBBBBBBBBBBBBBBb");
+            //print("BBBBBBBBBBBBBBBBBBBBb");
             direction = 1;
         }
     }

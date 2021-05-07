@@ -18,12 +18,14 @@ public class Movement : MonoBehaviour
     GamePadState state;
     GamePadState prevState;
 
+
     public Transform cameraTransform = null;
 
     Rigidbody rigidbody = null;
 
     bool jumping = false;
     private bool canJump = false;
+    private bool playingGrab = false;
     [HideInInspector]
     public bool grabbing = false;
 
@@ -109,6 +111,7 @@ public class Movement : MonoBehaviour
         {
             canJump = false;
             rigidbody.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
+            SoundManager.PlaySound("jump");
         }
 
         Collider[] touchedColliders = Physics.OverlapSphere(new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z), 0.5f, ignorePlayerMask);
@@ -140,6 +143,7 @@ public class Movement : MonoBehaviour
 
         if (prevState.Buttons.Y == ButtonState.Pressed && state.Buttons.Y == ButtonState.Pressed)
         {
+            SoundManager.PlaySound("reset");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name.ToString());
         }
     }
@@ -149,9 +153,15 @@ public class Movement : MonoBehaviour
         if (state.Buttons.RightShoulder == ButtonState.Pressed)
         {
             grabbing = true;
+            if (playingGrab == false)
+            {
+                SoundManager.PlaySound("grab");
+                playingGrab = true;
+            }
         }
         else
         {
+
             if (grabbed != null)
             {
                 if (GetComponent<PlayerPolyhedron>().PlayerShape == Shape.sphere)
@@ -169,6 +179,8 @@ public class Movement : MonoBehaviour
                 grabbed = null;
             }
             grabbing = false;
+            playingGrab = false;
+
         }
 
         if (grabbed != null)
