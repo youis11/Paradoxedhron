@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
 
 
     public Transform cameraTransform = null;
+    public GameObject cameraTP = null;
 
     Rigidbody rigidbody = null;
 
@@ -114,6 +115,30 @@ public class Movement : MonoBehaviour
             SoundManager.PlaySound("jump");
         }
 
+        if (prevState.Buttons.X == ButtonState.Pressed && state.Buttons.X == ButtonState.Pressed)
+        {
+            anim.SetTrigger("wave");
+            
+            SoundManager.PlaySound("wave");
+        }
+
+        if (prevState.Buttons.Y == ButtonState.Pressed && state.Buttons.Y == ButtonState.Pressed)
+        {
+            anim.SetTrigger("dance");
+            SoundManager.PlaySound("dance");
+        }
+
+        if (isPlaying(anim, "Waving") || isPlaying(anim, "Dancing"))
+        {
+            cameraTransform.gameObject.SetActive(false);
+            cameraTP.SetActive(true);
+        }
+        else
+        {
+            cameraTP.SetActive(false);
+            cameraTransform.gameObject.SetActive(true);
+        }
+
         Collider[] touchedColliders = Physics.OverlapSphere(new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z), 0.5f, ignorePlayerMask);
         //Debug.Log("touched colliders length " + touchedColliders.Length);
         if (touchedColliders.Length == 0)
@@ -141,7 +166,7 @@ public class Movement : MonoBehaviour
 
         Grab();
 
-        if (prevState.Buttons.Y == ButtonState.Pressed && state.Buttons.Y == ButtonState.Pressed)
+        if (prevState.Buttons.B == ButtonState.Pressed && state.Buttons.B == ButtonState.Pressed)
         {
             SoundManager.PlaySound("reset");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name.ToString());
@@ -187,6 +212,15 @@ public class Movement : MonoBehaviour
         {
             grabbed.transform.forward = transform.forward;
         }
+    }
+
+    bool isPlaying(Animator anim, string stateName)
+    {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName(stateName) &&
+                anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+            return true;
+        else
+            return false;
     }
 
     public void SavePlayer ()
