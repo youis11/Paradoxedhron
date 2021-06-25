@@ -10,19 +10,28 @@ public class TimerScript : MonoBehaviour
 
     //Bool
     public bool startTimer = false;
-
+    static bool firstTime = false;
 
     //Create displayed timer
     Text text;
 
     void Awake()
     {
-        //Load Text class
-        text = GetComponentInChildren<Text>();
-        DontDestroyOnLoad(this.gameObject);
+        if(!firstTime)
+        {
+            //Load Text class
+            text = GetComponentInChildren<Text>();
+            DontDestroyOnLoad(this.gameObject);
 
-        //Reset the timer
-        //timer = 0f;
+            SceneManager.sceneLoaded += isLevel0;
+
+            firstTime = true;
+        }
+        else
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
 
     }
 
@@ -37,10 +46,29 @@ public class TimerScript : MonoBehaviour
 
         Scene scene = SceneManager.GetActiveScene();
 
-        //if (scene.name == "Level0")
-        //{
-        //    text.text = timer.ToString("F1") + " Points";
-        //}
+        if (timer <= 0)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Level0");
+            timer = 24f * 60f;
+        }
+
+        if (scene.name == "MainMenu" || scene.name == "Winning")
+        {
+            text.text = "";
+        }
+    }
+
+    void isLevel0(Scene scene, LoadSceneMode loadScene)
+    {
+        if (scene.buildIndex == 1)
+        {
+            timer = 24f * 60f;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= isLevel0;
     }
 
 }
