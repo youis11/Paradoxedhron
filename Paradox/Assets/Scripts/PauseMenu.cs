@@ -12,6 +12,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject introPanel;
 
+    TimerScript timerSc;
+
     GamePadState state;
 
     // Update is called once per frame
@@ -19,7 +21,14 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(LateCall());
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (scene.name == "Level0")
+        {
+            StartCoroutine(LateCall());
+        }
+
+        timerSc = GameObject.Find("TimeManager").GetComponent<TimerScript>();
     }
 
     IEnumerator LateCall()
@@ -28,6 +37,7 @@ public class PauseMenu : MonoBehaviour
         yield return new WaitForSeconds(msec);
 
         introPanel.SetActive(false);
+        timerSc.startTimer = true;
         //Do Function here...
     }
 
